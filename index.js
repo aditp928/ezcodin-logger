@@ -1,1 +1,3 @@
-module.exports = require('./defaultLogger')
+const Logger = require('./defaultLogger')
+
+module.exports = Logger
