@@ -65,22 +65,22 @@ class Logger extends EZ{
         .then(this.appendFile(path, `${type} ${Date()} ${text} \n`))
         .catch(err=>{ return err })
     }
-    cError(msg){
+    debugError(msg){
         this.debug(this.e(`[DEBUG ERROR] ${Date()} ${msg}`))
     }
-    cWarning(msg){
+    debugWarning(msg){
         this.debug(this.w(`[DEBUG WARN] ${Date()} ${msg}`))
     }
-    cInfo(msg){
+    debugInfo(msg){
         this.debug(this.i(`[DEBUG INFO] ${Date()} ${msg}`))
     }
-    lError(msg) {
+    logError(msg) {
         this.log(this.filePaths.error, msg, config.types.error)
     }
-    lWarning(msg) {
+    logWarning(msg) {
         this.log(this.filePaths.warning, msg, config.types.warning)
     }
-    lInfo(msg) {
+    logInfo(msg) {
         this.log(this.filePaths.info, msg, config.types.info)
     }
     checkFile(filePath){
@@ -108,6 +108,5 @@ class Logger extends EZ{
 let log = new Logger({ colors: { error: 'blue' } }, (result) => {
     console.log(result)
 })
-log.lError('whoops')
 
-module.exports = log
+module.exports = Logger
