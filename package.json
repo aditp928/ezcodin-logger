@@ -1,0 +1,15 @@
+{
+  "name": "logger",
+  "version": "1.0.0",
+  "description": "Simple logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test"
+  },
+  "keywords": [],
+  "author": "Mark Ring: mjrcodin@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1"
+  }
+}
