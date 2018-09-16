@@ -1,0 +1,2 @@
+# ez-logger
+Simple logger
