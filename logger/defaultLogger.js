@@ -31,9 +31,9 @@ class Logger extends EZ{
             this.on(config.events.cError, this.debugError)
             this.on(config.events.cWarning, this.debugWarning)
             this.on(config.events.cInfo, this.debugInfo)
-            this.on(config.events.cError, this.logError)
-            this.on(config.events.cWarning, this.logWarning)
-            this.on(config.events.cInfo, this.logInfo)
+            this.on(config.events.lError, this.logError)
+            this.on(config.events.lWarning, this.logWarning)
+            this.on(config.events.lInfo, this.logInfo)
 
             //color code dubug errors
             this.e = chalk.bold[this.debugColors.error]
