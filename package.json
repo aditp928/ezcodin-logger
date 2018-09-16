@@ -1,13 +1,19 @@
 {
   "name": "ezcodin-logger",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Simple logger",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./test"
   },
-  "keywords": [],
-  "author": "Mark Ring: mjrcodin@gmail.com",
+  "keywords": ["log","logger","logging","ezcodin"],
+  "author": "Mark Ring <mjrcodin@gmail.com> (https://mjrcodin.github.io/ezcodin-logger)",
+  "homepage": "https://mjrcodin.github.io/ezcodin-logger",
+  "bugs":"https://github.com/mjrcodin/ezcodin-logger/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjrcodin/ezcodin-logger.git"
+  },
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1"
