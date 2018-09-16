@@ -1,4 +1,5 @@
-#EZ-LOGGER
+# EZ-LOGGER
+
 This is a very simple logger, that will allow you to console color coded debug statements, in addition to writing to logs to files. Currently three files are created info, warning, and error. Will be adding features over time, collaboraters welcome. 
 
 ##Install
