@@ -15,8 +15,8 @@ exports.config = {
         cWarning:   'consoleWarning',
         cInfo:      'consoleInfo',
         lError:     'logError',
-        lWarning:   'logWarning', 
-        lInfo:      'logInfo',
+        lWarning:   'logWarning',
+        lInfo:      'logInfo'
     },
     types: {
         error: '[ERROR]',
