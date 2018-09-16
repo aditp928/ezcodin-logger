@@ -1,5 +1,5 @@
 {
-  "name": "logger",
+  "name": "ezcodin-logger",
   "version": "1.0.0",
   "description": "Simple logger",
   "main": "index.js",
