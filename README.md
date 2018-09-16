@@ -62,7 +62,7 @@ let options = {
 }
 
 //With Options object and Callback
-let log = new Log( options, result => console.log(result))
+let log = new Log( options, result => console.log(result.msg)) //console => 'ezcodin-logger initialized'
 ```
 ```bash
 # available colors: 
