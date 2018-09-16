@@ -1,6 +1,6 @@
 const fs = require('fs')
 const chalk = require('chalk')
-const EZ = require('./ez-logger')
+const EZ = require('./ezcodin-logger')
 const config = require('./config').config
 
 class Logger extends EZ{
