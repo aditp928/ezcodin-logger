@@ -105,8 +105,4 @@ class Logger extends EZ{
       
     }
 }
-let log = new Logger({ colors: { error: 'blue' } }, (result) => {
-    console.log(result)
-})
-
 module.exports = Logger
