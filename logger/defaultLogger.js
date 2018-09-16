@@ -48,7 +48,7 @@ class Logger extends EZ{
             this.checkFile(this.filePaths.info)
 
             //callback with configuration
-            this.cb('ezcodin-logger initialized')
+            this.cb({ msg: 'ezcodin-logger initialized', colors: this.debugColors, paths: this.filePaths })
             
         } else {
             //callback with error
