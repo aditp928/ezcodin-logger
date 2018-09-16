@@ -1,12 +1,13 @@
 # EZ-LOGGER
 
-This is a very simple logger, that will allow you to console color coded debug statements, in addition to writing to logs to files. Currently three files are created info, warning, and error. Will be adding features over time, collaboraters welcome. 
+This is a very simple logger, that will allow you to console color coded debug statements, in addition to writing to log files. Currently three files are created info, warning, and error. Will be adding features over time, collaboraters welcome. 
 
-##Install
+## Install
+
 ```bash
 > npm install ezcodin-logger
 ```
-## Log to Console
+## Setup
 ```javascript
 const Log = require('ezcodin-logger')
 
@@ -16,7 +17,7 @@ let log = new Log()
 //Optional Callback
 let log = new Log( result => console.log(result))
 
-//Optional Options object
+//Optional Options Object
 let options = {
      colors:{
         error: 'red',
@@ -30,50 +31,44 @@ let options = {
     }
 
 }
-let log = new Log( options, result => console.log(result))
+let log = new Log( options)
 
 //With Options object and Callback
 let log = new Log( options, result => console.log(result))
-
+```
+## Log to Console
+```javascript
+//debug logger
 log.debugError('debug error')
 log.debugWarning('debug warning')
 log.debugInfo('debug info')
 ```
 ![alt text](./images/console.png)
 ## Log to File
-Log files are created automatically in the root directory, if a logging event is fired.
+Log files are created in the root directory automatically upon instantiating the logger, use the options object to place logs in another location.
 ```javascript
-const Log = require('ezcodin-logger')
-
-let log = new Log( result => console.log(result))
-
-log.debugError('console Error')
-log.debugWarning('console Warning')
-log.debugInfo('Console Info')
+//Log to file
+log.logError('log error')
+log.logWarning('log warning')
+log.logInfo('log info')
 ```
- **./ez.warning.log**
-
 ![alt text](./images/log.png)
+## Express example
+```javascript
+app.use(function (req, res, next) {
+    let err = new Error(`${req.ip} tried to reach ${req.originalUrl}, resource not found`);
+    err.statusCode = 404;
+    log.logInfo(err.statusCode + err.message )
+    res.status(err.statusCode).json({ status: err.statusCode, msg: err.message });
+}); 
 
-## Options Object
-Options Object allows for modification of log file paths and names, and debug colors.
-```javascript 
-let options = {
-     colors:{
-        error: 'red',
-        warning: 'yellow',
-        info: 'blue'
-    },
-    filePaths: {
-        error: './logs/ez.error.log',
-        warning: './logs/ez.warning.log',
-        info: './logs/ez.info.log'
+app.use(function(err, req, res, next) {
+    if (!err.statusCode) err.statusCode = 500;   
+    log.logError(err.statusCode + err.message )
+    res.status(err.statusCode).json({ status: err.statusCode, msg: err.message }); 
     }
-
-}
-let log = new Log( options, result => console.log(result))
+});
 ```
-
 ```bash
 # available colors: 
 'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'gray', 'redBright',
