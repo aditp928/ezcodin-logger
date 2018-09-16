@@ -1,4 +1,4 @@
-# EZ-LOGGER
+# EZCODIN-LOGGER
 
 This is a very simple logger, that will allow you to console color coded debug statements, in addition to writing to log files. Currently three files are created info, warning, and error. Will be adding features over time, collaboraters welcome. 
 
@@ -8,14 +8,23 @@ This is a very simple logger, that will allow you to console color coded debug s
 > npm install ezcodin-logger
 ```
 ## Setup
+##### No Options:
 ```javascript
 const Log = require('ezcodin-logger')
 
 //without callback or Options
 let log = new Log()
+```
+##### With Callback:
+```javascript
+const Log = require('ezcodin-logger')
 
 //Optional Callback
 let log = new Log( result => console.log(result))
+```
+##### With Options Object:
+```javascript
+const Log = require('ezcodin-logger')
 
 //Optional Options Object
 let options = {
@@ -32,9 +41,33 @@ let options = {
 
 }
 let log = new Log( options)
+```
+##### All of the above:
+```javascript
+const Log = require('ezcodin-logger')
+
+//Optional Options Object
+let options = {
+     colors:{
+        error: 'red',
+        warning: 'yellow',
+        info: 'blue'
+    },
+    filePaths: {
+        error: './logs/ez.error.log',
+        warning: './logs/ez.warning.log',
+        info: './logs/ez.info.log'
+    }
+
+}
 
 //With Options object and Callback
 let log = new Log( options, result => console.log(result))
+```
+```bash
+# available colors: 
+'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'gray', 'redBright',
+'greenBright', 'yellowBright', 'blueBright', 'magentaBright', 'cyanBright', 'whiteBright'
 ```
 ## Log to Console
 ```javascript
@@ -69,8 +102,4 @@ app.use(function(err, req, res, next) {
     }
 });
 ```
-```bash
-# available colors: 
-'black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'gray', 'redBright',
-'greenBright', 'yellowBright', 'blueBright', 'magentaBright', 'cyanBright', 'whiteBright'
-```
+

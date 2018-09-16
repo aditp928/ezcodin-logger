@@ -84,10 +84,10 @@ class Logger extends EZ{
         this.log(this.filePaths.info, msg, config.types.info)
     }
     checkFile(filePath){
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             fs.exists(filePath, (result) => {
                 if (result) return resolve(result)
-                fs.writeFile(filePath, `[${filePath}] Created: ${Date()}  \n ez-logger \n \n`, function (err) {
+                fs.writeFile(filePath, `[${filePath}] Created: ${Date()}  \n ezcodin-logger \n \n`, function (err) {
                     if(err) console.log(err)
                     resolve()
                 })
@@ -96,7 +96,7 @@ class Logger extends EZ{
         }).catch(err => { return err })
     }
     appendFile(filename, text){
-        return new Promise((reject, resolve) => {
+        return new Promise((reject) => {
             fs.appendFile(filename, text, function (err) {
                 if (err) return reject(err)
                 return Promise.resolve()
