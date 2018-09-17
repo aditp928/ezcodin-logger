@@ -4,12 +4,20 @@
   "description": "Simple logger",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test"
+    "test": "./node_modules/mocha/bin/mocha ./test -w"
   },
-  "keywords": ["ezcodin-logger","log","logs","logger","logging","middleware","timestamp"],
+  "keywords": [
+    "ezcodin-logger",
+    "log",
+    "logs",
+    "logger",
+    "logging",
+    "middleware",
+    "timestamp"
+  ],
   "author": "Mark Ring <mjrcodin@gmail.com> (https://mjrcodin.github.io/ezcodin-logger)",
   "homepage": "https://mjrcodin.github.io/ezcodin-logger",
-  "bugs":"https://github.com/mjrcodin/ezcodin-logger/issues",
+  "bugs": "https://github.com/mjrcodin/ezcodin-logger/issues",
   "repository": {
     "type": "git",
     "url": "https://github.com/mjrcodin/ezcodin-logger.git"
@@ -17,5 +25,9 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   }
 }
