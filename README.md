@@ -4,6 +4,8 @@ This is a very simple logger, that will allow you to console color coded debug s
 
 Collaboraters welcome, looking forward to some pull requests! 
 
+[Home Page](https://mjrcodin.github.io/ezcodin-logger/)
+
 ## Install
 
 ```bash
